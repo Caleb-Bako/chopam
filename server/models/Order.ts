@@ -1,6 +1,6 @@
 import mongoose, { Schema, Document } from "mongoose";
 
-interface ICartItem {
+export interface ICartItem {
   food_name: string;
   price_at_purchase: number;
   quantity: number;
