@@ -43,7 +43,7 @@ const CreateOrder = async (req: Request, res: Response): Promise<void> => {
       total_price: total,
     });
     // 5. TODO: Respond with a 201 status and send back the created order object.
-    res.status(201).json({ newOrder });
+    res.status(201).json(newOrder);
   } catch (error) {
     console.error("Error creating order:", error);
     res.status(500).json({ message: "Server error. Could not process order." });

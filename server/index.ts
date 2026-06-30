@@ -1,16 +1,20 @@
 import express, { Request, Response } from "express";
 import dotenv from "dotenv";
 import http from "http";
+import cors from "cors";
 import {Server} from "socket.io";
 import connectDB from "./config/db";
 import router from "./routes/menuRoutes";
 import OrderRoutes from "./routes/orderRoutes";
+import intialize from "./routes/paymentRoutes";
 
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+app.use(cors({ origin: "http://localhost:3000" }));
 
 const server = http.createServer(app);
 
@@ -27,6 +31,7 @@ app.use(express.json());
 
 app.use("/api/menu",router);
 app.use("/api/order", OrderRoutes);
+app.use("/api/payment",intialize);
 
 //Setup for core Web socket event listener
 io.on("connection", (socket)=>{
