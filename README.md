@@ -1,4 +1,4 @@
-# 🚀 ChopAm (Full-Stack Monorepo)
+#  ChopAm (Full-Stack Monorepo)
 
 A full-stack, real-time food ordering and delivery tracking application. This repository houses both the responsive Next.js client engine and the type-safe Express backend, demonstrating a complete integration of database operations, sandbox payment flows, and event-driven WebSocket communication.
 
